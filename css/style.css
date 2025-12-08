@@ -5,8 +5,10 @@
   --colorv: #21a016;
   --colorf: #2b8f2295;
 }
-
-
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 
 
@@ -120,7 +122,7 @@ a.parallax4{
 /* LIENS PROJETS */
 
 h1 {
-    margin-left: 30px;
+  margin-left: 40px;
     font-size: 35px;
     color: #ffffff;
     transition: 0.45s ease;
@@ -130,6 +132,7 @@ h1 {
   font-style: normal;
   font-variation-settings:
     "wdth" 300;
+  filter: drop-shadow(0 0 8px #000000);
 }
 
 a.parallax:hover,
@@ -143,16 +146,15 @@ a.parallax4:hover {
 /* A Propos */
 
 #apropos {
-  height: 400px;
+  height: 800px;
   max-width: 700px;
-  margin: 0 auto;
-  padding: 150px 30px;
+  padding: 20px 30px;
   background: var(--colorf);
   color: #fff;
   border-radius: 12px;
   line-height: 1.6;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin: 100px auto;
   align-content: center;
 }
 
@@ -255,126 +257,68 @@ textarea:focus {
   color: #ffffff;
 }
 
-h3{
-  font-size: 35px;
-  margin-top: -15px;
-}
 
-h2{
-  font-size: 50px;
-  text-align: left;
-  margin-left: 40px;
-  color: #fff;
-    font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-
-}
-
-.media{
-  display: flex;
-  gap:100px;
-  margin-left: 300px;
-}
 
 /* MEDIA POUR LES PROJETS */
-
-
-.section-parent {
+/* ----- Structure générale ----- */
+.projet {
+    width: 100%;
+    max-width: 800px;       /* pour éviter un contenu trop large sur ordi */
+    margin: 0 auto;         /* centre tout */
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* Les blocs s’empilent */
-    gap: 50px;
+    flex-direction: column;
+    gap: 30px;
 }
 
 
+.texte {
+    text-align: center;     /* tout le texte centré */
+    padding: 0 10px;
+}
 
-.section-bloc {
+.texte h3, 
+.texte h4 {
+    margin-bottom: 10px;
+}
+
+.texte p {
+    line-height: 1.8;
+    padding-top: 50px;
+}
+
+
+.media {
+    width: 100%;
     display: flex;
-    flex-direction: row; /* À l’intérieur, 2 colonnes */
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-    gap: 50px;
-    padding: 60px 0;
+    justify-content: center;  /* centre le média Instagram */
+    padding: 20px 0px 20px 0px;
 }
 
-.texte{
-  max-width: 500px;
-  align-items: center;
-  margin-left: 40px;
-  border-radius: 2%;
+.media blockquote.instagram-media {
+    max-width: 350px !important; /* limite la taille pour téléphone */
+    margin: 0 auto !important;     /* évite les déformations */
 }
 
-.media{
-  aspect-ratio: 9/ 16;
-  margin-left: 20px;
-  overflow: hidden;
-  border-radius: 2%;
+.instagram-media{
+  max-height: 600px;
+  width: 100px;
 }
 
-.media iframe {
-    transform: scale(1.5); /* tu ajustes jusqu’à ce que ça te plaise */
-    transform-origin: center;
-    border: 0;
-    transform: translateY(10px);
-}
-
-.texte h3{
-  font-size: 30px;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 75px;
-  margin-top: -75px;
-    font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-.texte h4{
-  font-size: 25px;
-  color: #9f9f9f;
-    font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
+/*Texte*/
 
 p{
   color: #ffffff;
-  margin-left: 25px;
   max-width: 900px;
 }
 
-/* Responsive smartphone */
-@media(max-width: 850px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .left iframe {
-        max-width: 100%;
-        height: 500px;
-    }
-
-    .right {
-        max-width: 100%;
-    }
-}
 
 h3{
   font-size: 40px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
@@ -384,7 +328,7 @@ h3{
 
 h4{
   font-size: 30px;
-  color: white;
+  color: rgb(151, 151, 151);
   text-align: center;
     font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -396,7 +340,7 @@ h4{
 
 h5{
   font-size: 20px;
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
@@ -422,4 +366,31 @@ h5{
   padding: 10.5px 105px;
   font-size: 20px;
   filter: drop-shadow(0 0 8px #0000005d);
+}
+
+hr{
+  border: none;
+  width: 320px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.projet hr{
+  border: 1px solid white;
+}
+
+
+@media (max-width: 768px) {
+    /* Ton CSS pour les écrans plus petits */
+    h2,h3,h4,h5,h6,p{
+      max-width: 550px;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 4%;
+    }
+
+    h1{
+      box-shadow: #000000;
+    }
+
 }
