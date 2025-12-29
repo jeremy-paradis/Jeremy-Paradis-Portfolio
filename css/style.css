@@ -187,21 +187,6 @@ a.parallax4:hover {
 }
 
 
-@media (max-width: 900px) {
-    .info {
-        flex-direction: column;
-        text-align: center;
-        margin: 40px;
-    }
-
-    .info .image img {
-        max-width: 80%;
-        height: auto;
-    }
-}
-
-
-
 
 /* Contact */
 
@@ -524,4 +509,5 @@ hr{
     margin: 5px;
   }
 }
+
 
