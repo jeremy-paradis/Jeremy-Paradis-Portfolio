@@ -2,8 +2,8 @@
 
 :root {
   --color: #171717;
-  --colorv: #21a016;
-  --colorf: #2b8f2295;
+  --colorb: #1f3f75;
+  --colora: #5983ce;
 }
 html, body {
     width: 100%;
@@ -42,38 +42,28 @@ header {
     align-items: center;
     padding: 20px 40px;
     background: var(--color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     filter: drop-shadow(0 0 30px #000000);
     height: 50px;
+    z-index: 1000;
+    position: sticky;
 }
 
-.logo img {
-    height: 75px;
-    transition: 0.4s ease;
-}
+
 
 .links {
     display: flex;
     gap: 40px; /* espace entre les liens */
 }
 
-.links a {
+.links a, .logo a {
     text-decoration: none;
     color: #fff;
     font-size: 20px;
     transition: 0.25s ease;
 }
 
-.links a:hover {
-    color: var(--colorv);
-    font-size: 25px;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 4px var(--colorv));
+.links a:hover, .logo a:hover {
+    color: var(--colora);
 }
 
 
@@ -145,85 +135,196 @@ a.parallax4:hover {
 
 /* A Propos */
 
-#apropos {
-  height: 800px;
-  max-width: 700px;
-  padding: 20px 30px;
-  background: var(--colorf);
-  color: #fff;
-  border-radius: 12px;
-  line-height: 1.6;
-  margin-top: 100px;
-  margin: 100px auto;
-  align-content: center;
+.info {
+    margin: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: var(--colorb);
 }
+
+/* Les deux prennent exactement la même place */
+.info .text{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .image img {
+    width: 70%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.text h2 {
+    position: relative;
+    margin-bottom: 30px;
+    top: -30px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.text p {
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    top: -10px;
+    font-weight: 400;
+    max-width: 700px;
+    min-width: 300px;
+}
+
+
+@media (max-width: 900px) {
+    .info {
+        flex-direction: column;
+        text-align: center;
+        margin: 40px;
+    }
+
+    .info .image img {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
 
 
 
 /* Contact */
 
 .contact-section {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2.5rem;
-  background: var(--color);
-  color: #fff;
-  border-radius: 12px;
-  margin-top: 100px;
-  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 120px 20px;
 }
 
+.contact-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
 
-.contact-form {
+/* FORMULAIRE */
+.contact-form h2 {
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.contact-form label {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
+.contact-form input,
+.contact-form textarea {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #222;
+  background: #111;
+  color: white;
 }
 
-label {
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-input,
-textarea {
-  padding: 0.8rem 1rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  background: #1a1a1a;
-  color: #fff;
-  font-size: 1rem;
+.contact-form textarea {
   resize: none;
+  height: 120px;
 }
 
-input:focus,
-textarea:focus {
-  border-color: var(--colorv);
-  outline: none;
-}
-
-
-
-.btn-send {
-  padding: 0.9rem 1.3rem;
-  font-size: 1rem;
+.contact-form button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  background: var(--colorb);
+  color: white;
   cursor: pointer;
-  background: var(--colorv);
-  color: #fff;
-  font-weight: 600;
-  transition: background 0.2s ease;
 }
 
-.btn-send:hover {
-  background: rgb(160, 160, 160);
-  color: #000000;
+.contact-form button:hover {
+  background: var(--colora);
+}
+
+/* CARTE COMPÉTENCES */
+.skills-card {
+  background: var(--colorb);
+  border-radius: 10px;
+  padding: 35px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-card h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.skills-card p {
+  line-height: 1.6;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* SOCIALS */
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.socials a {
+  color: #ccc;
+  font-size: 30px;
+  transition: 0.4s ease;
+}
+
+.socials a:hover {
+  color: #ffffff;
+}
+
+/* BOUTON CV */
+.cv-button {
+  margin-top: auto;
+  background: white;
+  color: var(--colorb);
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cv-button:hover {
+  background: #eaeaea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Footer */
@@ -253,7 +354,6 @@ textarea:focus {
 }
 
 .social-links a:hover {
-  font-size: 35px;
   color: #ffffff;
 }
 
@@ -384,14 +484,15 @@ hr{
     /* Ton CSS pour les écrans plus petits */
     h2,h3,h4,h5,h6{
       max-width: 550px;
-      text-align: center;
-      margin: 0 auto;
+      text-align: left;
+      margin: 5px;
       margin-bottom: 4%;
     }
 
     p{
+      text-align: left;
       max-width: 420px;
-      margin: 0 auto;
+      margin: 5px;
       margin-right: 35px;
       margin-bottom: 4%;
     }
@@ -401,8 +502,21 @@ hr{
     }
 
     .media{
-      margin-right: 35px;
-      margin: 0 auto;
+      max-width: 90%;
+      align-items: center;
+      align-content: center;
+      
     }
 
+
+    .footer h5{
+      text-align: center;
+    }
+
+
+    .cv-button {
+ 
+      margin-top: 30px;
+
+    }
 }
