@@ -1,0 +1,522 @@
+/* ======================================================
+   FONT & VARIABLES
+====================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg-main: #171717;
+  --bg-dark: #0f0f0f;
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  --gradient-main: linear-gradient(90deg, #87a7f2, #94e4e5);
+
+  --accent-a: #87a7f2;
+  --accent-b: #94e4e5;
+
+  --text-main: #ffffff;
+  --text-muted: #b5b5b5;
+}
+
+/* ======================================================
+   RESET & BASE
+====================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1e1e1e, #0f0f0f);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  max-width: 900px;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+}
+
+.logo a,
+.links a {
+  font-size: 18px;
+  transition: color 0.25s ease;
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+}
+
+.logo a:hover,
+.links a:hover {
+  color: var(--accent-b);
+}
+
+#contact-section,
+#info {
+  scroll-margin-top: 90px;
+}
+
+/* ======================================================
+   BANNER
+====================================================== */
+
+.banner {
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner h1 {
+  font-size: 62px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.banner h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ======================================================
+   PROJECT CARDS
+====================================================== */
+
+.project {
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.65);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 20px 20px 10px;
+  font-size: 20px;
+}
+
+.card h5 {
+  margin: 20px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.card p {
+  margin: 0 20px 25px;
+  font-size: 14px;
+}
+
+/* ======================================================
+   CONTACT & COMPÉTENCES
+====================================================== */
+
+.contact-section {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: flex-start;
+}
+
+/* ---------- GLASS CARDS ---------- */
+
+.contact-form,
+.skills-card {
+  max-width: 540px;
+  width: 100%;
+  padding: 55px 60px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- FORM ---------- */
+
+.contact-form h2 {
+  font-size: 28px;
+  margin-bottom: 35px;
+  font-weight: 500;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 130px;
+}
+
+.contact-form button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--gradient-main);
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(135, 167, 242, 0.4);
+}
+
+/* ---------- SKILLS ---------- */
+
+.skills-card h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.skills-card p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+/* ---------- CV BUTTON ---------- */
+
+.cv-button {
+  margin-top: auto;
+  background: var(--gradient-main);
+  color: black;
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(148, 228, 229, 0.4);
+}
+
+/* ======================================================
+   SOCIALS
+====================================================== */
+
+.socials-wrapper {
+  width: 100%;
+  padding: 25px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.socials {
+  display: flex;
+  gap: 45px;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+  margin-bottom: 25px;
+}
+
+.socials img {
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.15);
+}
+
+.socials-wrapper:hover .socials {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer {
+  background: var(--bg-dark);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  font-size: 28px;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 1080px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .contact-form,
+  .skills-card {
+    padding: 45px 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0 15px;
+  }
+
+  .banner h1 {
+    font-size: 44px;
+  }
+
+  .project {
+    padding: 30px 20px;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+
+/* ======================================================
+   PAGES PROJETS – CENTRAGE GLOBAL
+====================================================== */
+
+.projet {
+  max-width: 900px;              /* largeur confortable */
+  margin: 0 auto;                /* centrage horizontal */
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;           /* centre tout */
+}
+
+/* TEXTE */
+
+.texte {
+  width: 100%;
+  text-align: center;
+}
+
+.texte h3,
+.texte h4 {
+  text-align: center;
+}
+
+.texte p {
+  text-align: left;           
+  margin: 0 auto 80px;
+  line-height: 2;
+  max-width: 720px;              /* lisibilité */
+}
+
+/* MEDIA (vidéo / image / embed) */
+
+.media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.media img,
+.media video,
+.media iframe,
+.media blockquote {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+/* INSTAGRAM */
+
+.instagram-media {
+  max-width: 380px !important;
+  margin: 0 auto !important;
+}
+
+/* SÉPARATEUR */
+
+.projet hr {
+  width: 200px;
+  margin: 80px auto;
+  opacity: 0.6;
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 600px) {
+  .projet {
+    padding: 70px 15px;
+  }
+
+  .texte p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+.titre-projet {
+  margin-bottom: 3rem;
+  max-width: 900px;
+}
+
+.titre-projet h3 {
+  margin: 40px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Soulignement moderne */
+.titre-projet h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 0.6rem;
+  background: linear-gradient(90deg, #7f5cff, #00d4ff);
+  border-radius: 2px;
+}
+
+.titre-projet h4 {
+  margin: 40px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d5d5d5;
+}
