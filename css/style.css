@@ -8,6 +8,9 @@
   --colorhoverb: #94e4e5;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 
 
 
@@ -549,6 +552,7 @@ header {
 #info {
   scroll-margin-top: 40px; /* adapte selon la hauteur de ta navbar */
 }
+
 
 
 
