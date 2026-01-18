@@ -14,7 +14,6 @@ html, body {
 
 
 
-
 /* NAVBAR */
 
 body{
@@ -145,7 +144,12 @@ header {
   }
 
   .card img {
-    height: 150px;
+    height: 150px
+  }
+
+
+  body{
+    max-width: 95%;
   }
 }
 
@@ -356,7 +360,7 @@ header {
   }
 
   .contact-form, .skills-card {
-    width: 400px;
+    width: 80%;
     margin-left: -15px;
     background-color: var(--colorbak);
     box-shadow: none;
@@ -552,7 +556,6 @@ header {
 #info {
   scroll-margin-top: 40px; /* adapte selon la hauteur de ta navbar */
 }
-
 
 
 
