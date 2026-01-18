@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
-  --color: #171717;
-  --colorb: #1f3f75;
-  --colora: #5983ce;
+  --colorbak: #171717;
+  --colorg: #1f1f1f;
+  --colora: linear-gradient(90deg, #87a7f2, #94e4e5);
+  --colorhover: #87a7f2;
+  --colorhoverb: #94e4e5;
 }
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
+
+
 
 
 
 /* NAVBAR */
 
 body{
-  margin: 0px;
+  margin: 0 auto;
   padding: 0px;
-  background-color: var(--color);
+  background-color: var(--colorbak);
 }
 
 html{
@@ -34,9 +34,7 @@ html{
   scroll-margin-top: 50px; /* adapte selon la hauteur de ta navbar */
 }
 
-#info {
-  scroll-margin-top: 150px; /* adapte selon la hauteur de ta navbar */
-}
+
 
 
 header {
@@ -50,7 +48,7 @@ header {
   align-items: center;
 
   padding: 15px 40px;
-  background: var(--color);
+  background: var(--colorbak);
 
   box-sizing: border-box;
   z-index: 1000;
@@ -74,143 +72,122 @@ header {
 
 .links a:hover,
 .logo a:hover {
-  color: var(--colora);
+  color: var(--colorhoverb);
 }
 
 
 
-/* PARALLAX */
+/* CARD */
+.project {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
 
-a.parallax, 
-a.parallax2, 
-a.parallax3,
-a.parallax4 {
-    margin: auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;     /* centre verticalement */
-    text-decoration: none;
-    width: 100%;
-    height: 250px; /* hauteur de la bannière (modifiable) */
-    transition: 0.45s ease;
-    border-radius: 30px;
+.project a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background: var(--colorg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  font-size: 19px;
+  margin: 16px 16px 8px;
+  color: #ffffff;
+}
+
+.card h5 {
+  text-align: center;
+  font-size: 16px;
+  margin: 16px 16px 8px;
+  color: #a9a9a9;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin: 0 16px 20px;
+  color: #b5b5b5;
+  line-height: 1.4;
+}
+
+/* Responsive ajustements */
+@media (max-width: 600px) {
+  .project {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .card img {
+    height: 150px;
+  }
 }
 
 
 
-/* Images selon les classes */
-a.parallax{
-    background-image: url("../files/img/1.png");
-    background-position: center;
-    background-size: cover;
-    
-}
-a.parallax2{
-    background-image: url("../files/img/2.png");
-    background-position: center;
-    background-size: cover;
-}
-a.parallax3{
-    background-image: url("../files/img/3.png");
-    background-position: center;
-    background-size: cover;
-}
-
-a.parallax4{
-    background-image: url("../files/img/4.png");
-    background-position: center;
-    background-size: cover;
-}
-
-/* LIENS PROJETS */
-
-h1 {
-  margin-left: 40px;
-    font-size: 35px;
-    color: #ffffff;
-    transition: 0.45s ease;
-      font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 300;
-  filter: drop-shadow(0 0 8px #000000);
-}
-
-a.parallax:hover,
-a.parallax2:hover,
-a.parallax3:hover,
-a.parallax4:hover {
-    height: 300px; /* augmente la hauteur de la bannière au survol */
-    filter: drop-shadow(0 0 8px #000000);
-}
-
-/* A Propos */
-
-.info {
-    margin: 100px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    background-color: var(--colorb);
-}
-
-/* Les deux prennent exactement la même place */
-.info .text{
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-}
-
-.info .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.info .image img {
-    width: 70%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.text h2 {
-    position: relative;
-    margin-bottom: 30px;
-    top: -30px;
-    text-align: center;
-    font-weight: 400;
-}
-
-.text p {
-    position: relative;
-    font-size: 15px;
-    line-height: 1.8;
-    top: -10px;
-    font-weight: 400;
-    max-width: 700px;
-    min-width: 300px;
+/* Banniere */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 
-@media (max-width: 900px) {
-    .info {
-        flex-direction: column;
-        text-align: center;
-        margin: 40px;
-    }
+.banner {
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+}
 
-    .info .image img {
-        max-width: 80%;
-        height: auto;
-    }
+.banner h1 {
+  font-size: 60px;
+    background-image: var(--colora);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.banner h2 {
+  font-size: 20px;
+      background-image: var(--colora);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+}
+
+
+.banner-content {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -218,19 +195,24 @@ a.parallax4:hover {
 
 /* Contact */
 
+.contact-form{
+  padding: 30px;
+  width: 500px;
+}
+
 .contact-section {
+  width: 90%;
+  padding: 35px;
   display: flex;
-  align-items: center;
+  margin: 0px auto;
   justify-content: center;
-  padding: 60px 20px 120px 20px;
+  align-items: center;
 }
 
 .contact-container {
-  width: 100%;
-  max-width: 1100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
 }
 
 /* FORMULAIRE */
@@ -264,13 +246,14 @@ a.parallax4:hover {
 }
 
 .contact-form button {
-  margin-top: 10px;
+  margin: 10px auto;
+  font-weight: 600;
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: var(--colorb);
-  color: white;
+  background: var(--colorhover);
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
@@ -280,12 +263,18 @@ a.parallax4:hover {
 
 /* CARTE COMPÉTENCES */
 .skills-card {
-  background: var(--colorb);
-  border-radius: 10px;
-  padding: 35px;
+  width: 500px;
+  max-width: 420px;
+  margin: 0 auto;
+  background: var(--colorg);
+  filter: drop-shadow();
+  border-radius: 18px;
+  padding: 40px;
   color: white;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .skills-card h2 {
@@ -294,34 +283,97 @@ a.parallax4:hover {
 }
 
 .skills-card p {
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 14px;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 /* SOCIALS */
+
+.socials-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+
+    /* FONDU SUR LES BORDS */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--colorbak) 15%,
+    var(--colorbak) 85%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--colorbak) 15%,
+    var(--colorbak) 85%,
+    transparent 100%
+  );
+  
+}   
+
+
 .socials {
-  margin-top: 1rem;
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: scroll 25s linear infinite;
 }
 
-.socials a {
-  color: #ccc;
-  font-size: 30px;
-  transition: 0.4s ease;
+.socials img {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
-.socials a:hover {
-  color: #ffffff;
+.socials img:hover {
+  transform: scale(1.15);
 }
+
+.socials-wrapper:hover .socials {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1080px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .contact-form, .skills-card {
+    width: 400px;
+    margin-left: -15px;
+    background-color: var(--colorbak);
+    box-shadow: none;
+  }
+
+
+}
+
+
+
+
+
+
+
 
 /* BOUTON CV */
 .cv-button {
   margin-top: auto;
-  background: white;
-  color: var(--colorb);
+  background: var(--colorhover);
+  color: black;
   text-align: center;
   padding: 12px;
   border-radius: 6px;
@@ -330,15 +382,10 @@ a.parallax4:hover {
 }
 
 .cv-button:hover {
-  background: #eaeaea;
+  background: var(--colora);
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* Footer */
 
@@ -350,6 +397,7 @@ a.parallax4:hover {
   align-items: center;
   margin-top: 3rem;
   height: 140px;
+  width: 100%;
 }
 
 
@@ -392,6 +440,7 @@ a.parallax4:hover {
 }
 
 .texte p {
+  text-align: left;
   margin: auto;
     line-height: 2.2;
     padding-top: 75px;
@@ -462,17 +511,7 @@ h5{
 
 
 
-.btn-cv{
-  text-decoration: none;
-  color: #000000;
-  padding: 10px 100px;
-  background-color: #ffffff;
-  font-size: 18px;
-  border-radius: 20px;
-  margin-left:auto;
-  border: none;
-  transition: 0.25s ease;
-}
+
 
 .btn-cv:hover{
   padding: 10.5px 105px;
@@ -490,30 +529,7 @@ hr{
 
 
 
-@media (max-width: 768px) {
-    /* Ton CSS pour les écrans plus petits */
-  p{
-    text-align: center;
-  }
 
-
-
-    h1{
-      box-shadow: #000000;
-    }
-
-
-
-    .footer h5{
-      text-align: center;
-    }
-
-
-    .cv-button {
- 
-      margin-top: 30px;
-
-    }
 
 a.parallax h1,
 a.parallax2 h1,
@@ -534,4 +550,5 @@ header {
   scroll-margin-top: 40px; /* adapte selon la hauteur de ta navbar */
 }
 
-}
+
+
