@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio Jérémy Paradis</title>
 
-  <link rel="icon" type="image/png" href="./files/img/icon.png">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./files/img/icon.png" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+  <!-- PARTICLES.JS (HTTPS + fiable) -->
+<script src="./js/particles.min.js"></script>
 </head>
 
 <body>
 
-  <!-- HEADER / NAV -->
-  <header class="main-header">
-    <div class="logo">
-      <a href="./index.html">Jeremy Paradis</a>
-    </div>
+<!-- HEADER -->
+<header class="main-header">
+  <div class="logo">
+    <a href="./index.html">Jeremy Paradis</a>
+  </div>
 
-    <nav class="links">
-      <a href="#contact-section">Contact</a>
-      <a href="./files/cv/CV Paradis Jérémy.pdf">Mon cv</a>
-    </nav>
-  </header>
+  <nav class="links">
+    <a href="#contact-section">Contact</a>
+    <a href="./files/cv/CV Paradis Jérémy.pdf">Mon CV</a>
+  </nav>
+</header>
 
-  <!-- BANNIÈRE -->
+<!-- BANNER -->
 <section class="banner">
   <div id="particles-js"></div>
 
@@ -35,50 +37,39 @@
   </div>
 </section>
 
-<script>
-  particlesJS("particles-js", {
-    "particles": {
-      "number": { "value": 80 },
-      "color": { "value": "#ffffff" },
-      "line_linked": { "enable": true },
-      "move": { "speed": 5 }
-    }
-  });
-</script>
+<!-- PROJETS -->
+<main>
+  <section class="project" id="project">
 
-  <!-- PROJETS -->
-  <main>
-    <section class="project" id="project">
+    <a href="./html/athome.html" class="card">
+      <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
+      <h3>Stage à Athome Studio</h3>
+      <h5>Montage vidéo et production musicale</h5>
+    </a>
 
-      <a href="./html/athome.html" class="card">
-        <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
-        <h3>Stage à Athome Studio</h3>
-        <h5>Montage vidéo et production musicale</h5>
-      </a>
+    <a href="./html/car.html" class="card">
+      <img src="./files/img/3.jpg" alt="Projet Octobersign">
+      <h3>Octobersign – Animation & Musique</h3>
+      <h5>Production musicale et animation 3D</h5>
+    </a>
 
-      <a href="./html/car.html" class="card">
-        <img src="./files/img/3.jpg" alt="Projet Octobersign">
-        <h3>Octobersign – Animation & Musique</h3>
-        <h5>Production musicale et animation 3D</h5>
-      </a>
+    <a href="./html/design.html" class="card">
+      <img src="./files/img/1.jpg" alt="Projet Motion Design">
+      <h3>Motion Design</h3>
+      <h5>Animations After Effects</h5>
+    </a>
 
-      <a href="./html/design.html" class="card">
-        <img src="./files/img/1.jpg" alt="Projet Motion Design">
-        <h3>Motion Design</h3>
-        <h5>Animations After Effects</h5>
-      </a>
+    <a href="./html/youtube.html" class="card">
+      <img src="./files/img/4.jpg" alt="Création d’intros 3D">
+      <h3>Création d’intros en 3D</h3>
+      <h5>Modélisation de texte pour YouTube</h5>
+    </a>
 
-      <a href="./html/youtube.html" class="card">
-        <img src="./files/img/4.jpg" alt="Création d’intros 3D">
-        <h3>Création d’intros en 3D</h3>
-        <h5>Modélisation de texte pour YouTube</h5>
-      </a>
+  </section>
+</main>
 
-    </section>
-  </main>
-
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact-section">
+<!-- CONTACT -->
+<section class="contact-section" id="contact-section">
     <div class="contact-container">
 
       <div class="contact-form">
@@ -125,8 +116,6 @@
     <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/330px-Blender_logo_no_text.svg.png" /></a>
     <a href="#"><img src="https://cdn.iconscout.com/icon/free/png-256/free-css3-icon-svg-download-png-1175200.png" /></a>
     <a href="#"><img src="https://www.programmation-facile.com/wp-content/uploads/2014/03/html5.png" /></a>
-
-    <!-- duplication pour l'effet infini -->
     <a href="#"><img src="https://logo-teka.com/wp-content/uploads/2025/08/photoshop-icon-logo.png" /></a>
     <a href="#"><img src="https://logo-teka.com/wp-content/uploads/2025/09/after-effects-icon-logo.png" /></a>
     <a href="#"><img src="https://play-lh.googleusercontent.com/Pxdgk7UjvfpihQv_WaAIndFJS0f_NcGvKGoKDN6HovXmnAQexYTgxDtPWdFRErJ_NRs=s256-rw" /></a>
@@ -142,22 +131,52 @@
       </div>
 
     </div>
-  </section>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-content">
-      <h5>© 2025 Jérémy Paradis — Portfolio</h5>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <h5>© 2025 Jérémy Paradis — Portfolio</h5>
 
-      <div class="social-links">
-        <a href="https://www.instagram.com/october1ch/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@JeremyParadis-rv9xf" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/in/jeremy-paradis-12953033a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/october1ch/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@JeremyParadis-rv9xf" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/jeremy-paradis-12953033a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
     </div>
-  </footer>
+  </div>
+</footer>
+
+<!-- PARTICLES INIT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.particlesJS) {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 90, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.6 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 100,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 3 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      },
+      retina_detect: true
+    });
+  }
+});
+</script>
+
 
 </body>
 </html>
-
-
