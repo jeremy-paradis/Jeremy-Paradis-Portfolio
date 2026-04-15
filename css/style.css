@@ -162,8 +162,14 @@ header {
 
 .card img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.card:hover img {
+  transform: scale(1.1);
 }
 
 .card h3 {
@@ -182,6 +188,59 @@ header {
 .card p {
   margin: 0 20px 25px;
   font-size: 14px;
+}
+
+/* ======================================================
+   UPCOMING PROJECTS
+====================================================== */
+
+.upcoming-projects {
+  padding: 40px 40px 80px;
+  text-align: center;
+}
+
+.upcoming-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.upcoming-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upcoming-card {
+  max-width: 400px;
+  flex: 1 1 350px;
+  position: relative;
+}
+
+.upcoming-card:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--gradient-main);
+  color: black;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* ======================================================
@@ -286,9 +345,11 @@ header {
 /* ---------- CV BUTTON ---------- */
 
 .cv-button {
+  display: block;
   background: var(--gradient-main);
   color: black;
   padding: 14px;
+  width: 100%;
   border-radius: 8px;
   text-align: center;
   font-weight: 600;
@@ -310,13 +371,11 @@ header {
   width: 100%;
   padding: 25px 0;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%);
 }
 
 .socials {
@@ -341,8 +400,86 @@ header {
 }
 
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ======================================================
+   CLIENTS
+====================================================== */
+
+.clients-section {
+  padding: 40px 40px 80px;
+  text-align: center;
+}
+
+.clients-section h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.clients-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.client-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  padding: 35px 50px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid transparent;
+  min-width: 240px;
+  text-decoration: none;
+}
+
+.client-logo:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--glass-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.client-logo img {
+  width: auto;
+  max-width: 180px;
+  height: 70px;
+  object-fit: contain;
+  filter: grayscale(1) invert(0.2) opacity(0.6);
+  transition: all 0.4s ease;
+}
+
+.client-logo:hover img {
+  filter: grayscale(0) invert(0) opacity(1);
+}
+
+.client-logo span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.client-logo:hover span {
+  color: var(--accent-b);
 }
 
 /* ======================================================
@@ -414,7 +551,7 @@ header {
     height: 150px;
   }
 
-    .contact-form,
+  .contact-form,
   .skills-card {
     padding: 45px 35px;
     width: 70%;
@@ -426,12 +563,15 @@ header {
 ====================================================== */
 
 .projet {
-  max-width: 900px;              /* largeur confortable */
-  margin: 0 auto;                /* centrage horizontal */
+  max-width: 900px;
+  /* largeur confortable */
+  margin: 0 auto;
+  /* centrage horizontal */
   padding: 100px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;           /* centre tout */
+  align-items: center;
+  /* centre tout */
 }
 
 /* TEXTE */
@@ -447,10 +587,11 @@ header {
 }
 
 .texte p {
-  text-align: left;           
+  text-align: left;
   margin: 0 auto 80px;
   line-height: 2;
-  max-width: 720px;              /* lisibilité */
+  max-width: 720px;
+  /* lisibilité */
 }
 
 /* MEDIA (vidéo / image / embed) */
@@ -468,6 +609,8 @@ header {
 .media blockquote {
   max-width: 100%;
   border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--glass-border);
 }
 
 /* INSTAGRAM */
