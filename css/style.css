@@ -109,23 +109,39 @@ header {
 .banner-content {
   position: relative;
   z-index: 2;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .banner h1 {
-  font-size: 62px;
+  font-size: clamp(40px, 8vw, 72px);
+  font-weight: 800;
+  letter-spacing: -2px;
   background: var(--gradient-main);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  margin: 0;
 }
 
 .banner h2 {
-  margin-top: 10px;
-  font-size: 20px;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  margin-top: 15px;
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 #particles-js {
@@ -141,8 +157,11 @@ header {
 .project {
   padding: 60px 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
   gap: 35px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .card {
@@ -153,11 +172,15 @@ header {
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.65);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+  border-color: var(--accent-a);
 }
 
 .card img {
@@ -178,11 +201,12 @@ header {
 }
 
 .card h5 {
-  margin: 20px;
+  margin: 0 20px 20px;
   text-align: left;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .card p {
@@ -250,6 +274,7 @@ header {
 
 .contact-section {
   width: 100%;
+  position: relative;
   padding: 80px 20px;
   display: flex;
   justify-content: center;
@@ -258,24 +283,37 @@ header {
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px;
-  align-items: flex-start;
+  gap: 50px;
+  align-items: stretch;
+  max-width: 1200px;
+  width: 100%;
 }
 
 /* ---------- GLASS CARDS ---------- */
 
 .contact-form,
 .skills-card {
-  max-width: 540px;
   width: 100%;
-  height: 650px;
-  padding: 55px 60px;
+  max-width: 480px;
+  padding: 50px 40px;
   margin: 0 auto;
   background: var(--glass-bg);
   backdrop-filter: blur(18px);
   border-radius: 22px;
   border: 1px solid var(--glass-border);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.skills-card {
+  justify-content: space-between;
 }
 
 /* ---------- FORM ---------- */
@@ -362,7 +400,11 @@ header {
   border-radius: 8px;
   text-align: center;
   font-weight: 600;
+  font-size: 15px;
+  /* Match font-size with submit button */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: auto;
+  /* Push to bottom */
 }
 
 .cv-button:hover {
@@ -428,13 +470,24 @@ header {
 }
 
 .clients-section h1 {
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 50px;
   background: var(--gradient-main);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   display: inline-block;
+  position: relative;
+}
+
+.clients-section h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-main);
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
 .clients-container {
@@ -538,10 +591,9 @@ header {
 
   .contact-form,
   .skills-card {
-    padding: 40px 30px;
-    width: 90%;
-    height: auto;
-    min-height: 600px;
+    padding: 35px 25px;
+    width: 100%;
+    min-height: auto;
   }
 }
 
@@ -559,8 +611,9 @@ header {
   }
 
   .project {
-    padding: 30px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 30px 15px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
   }
 
   .card img {
