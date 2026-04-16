@@ -273,37 +273,56 @@ header {
 ====================================================== */
 
 .contact-section {
-  width: 100%;
-  position: relative;
-  padding: 80px 20px;
-  display: flex;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
   justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: stretch;
-  max-width: 1200px;
-  width: 100%;
+.contact-title {
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
+
+
 
 /* ---------- GLASS CARDS ---------- */
 
 .contact-form,
 .skills-card {
-  width: 100%;
-  max-width: 480px;
-  padding: 50px 40px;
-  margin: 0 auto;
   background: var(--glass-bg);
-  backdrop-filter: blur(18px);
-  border-radius: 22px;
+  backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  text-align: left;
+}
+
+.contact-form:hover,
+.skills-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+  border-color: var(--accent-a);
 }
 
 .contact-form form {
@@ -312,15 +331,14 @@ header {
   flex: 1;
 }
 
-.skills-card {
-  justify-content: space-between;
-}
+
 
 /* ---------- FORM ---------- */
 
-.contact-form h2 {
-  font-size: 28px;
-  margin-bottom: 35px;
+.contact-form h3,
+.skills-card h3 {
+  margin: 0 0 20px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -376,12 +394,6 @@ header {
 }
 
 /* ---------- SKILLS ---------- */
-
-.skills-card h2 {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
 
 .skills-card p {
   font-size: 15px;
@@ -523,7 +535,7 @@ header {
 .client-logo img {
   width: auto;
   max-width: 180px;
-  height: 70px;
+  height: 120px;
   object-fit: contain;
   filter: grayscale(1) invert(0.2) opacity(0.6);
   transition: all 0.4s ease;
@@ -583,19 +595,7 @@ header {
    RESPONSIVE
 ====================================================== */
 
-@media (max-width: 1080px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
 
-  .contact-form,
-  .skills-card {
-    padding: 35px 25px;
-    width: 100%;
-    min-height: auto;
-  }
-}
 
 @media (max-width: 600px) {
   header {
@@ -629,13 +629,15 @@ header {
   }
 
   .contact-section {
-    padding: 60px 15px;
+    padding: 30px 15px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
   }
 
   .contact-form,
   .skills-card {
-    padding: 35px 25px;
-    width: 100%;
+    padding: 30px 20px;
+    max-width: 400px;
     text-align: center;
   }
 
@@ -643,9 +645,9 @@ header {
     text-align: center;
   }
 
-  .contact-form h2,
-  .skills-card h2 {
-    font-size: 24px;
+  .contact-form h3,
+  .skills-card h3 {
+    font-size: 22px;
   }
 
   .contact-form label {
@@ -654,6 +656,10 @@ header {
 
   .clients-section {
     padding: 40px 20px 60px;
+  }
+
+  .contact-section {
+    width: 90%;
   }
 
   .client-logo {
