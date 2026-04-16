@@ -216,11 +216,12 @@ header {
   gap: 35px;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .upcoming-card {
   max-width: 400px;
-  flex: 1 1 350px;
+  flex: 1 1 300px;
   position: relative;
 }
 
@@ -296,12 +297,20 @@ header {
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   padding: 14px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid var(--glass-border);
   border-radius: 8px;
   color: white;
   font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-a);
 }
 
 .contact-form textarea {
@@ -524,37 +533,79 @@ header {
 @media (max-width: 1080px) {
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
   .contact-form,
   .skills-card {
-    padding: 45px 35px;
-    width: 80%;
+    padding: 40px 30px;
+    width: 90%;
+    height: auto;
+    min-height: 600px;
   }
 }
 
 @media (max-width: 600px) {
   header {
-    padding: 0 15px;
+    padding: 0 20px;
+  }
+
+  .links {
+    gap: 20px;
   }
 
   .banner h1 {
-    font-size: 44px;
+    font-size: 38px;
   }
 
   .project {
     padding: 30px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .card img {
-    height: 150px;
+    height: 160px;
+  }
+
+  .upcoming-projects {
+    padding: 40px 20px 60px;
+  }
+
+  .upcoming-card {
+    flex: 1 1 100%;
+  }
+
+  .contact-section {
+    padding: 60px 15px;
   }
 
   .contact-form,
   .skills-card {
-    padding: 45px 35px;
-    width: 70%;
+    padding: 35px 25px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-card p {
+    text-align: center;
+  }
+
+  .contact-form h2,
+  .skills-card h2 {
+    font-size: 24px;
+  }
+
+  .contact-form label {
+    text-align: left;
+  }
+
+  .clients-section {
+    padding: 40px 20px 60px;
+  }
+
+  .client-logo {
+    min-width: 100%;
+    padding: 25px 30px;
   }
 }
 
