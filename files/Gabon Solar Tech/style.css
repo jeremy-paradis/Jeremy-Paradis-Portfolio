@@ -37,6 +37,10 @@ body {
     padding-bottom: 50px;
 }
 
+.top-section2 {
+    background-color: var(--top-bg);
+}
+
 .header {
     position: fixed;
     top: 15px;
@@ -909,5 +913,227 @@ body {
 
     .legal-content {
         padding: 20px;
+    }
+}
+
+/* EQUIPEMENTS PAGE STYLES */
+.equipements-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 20px 40px 20px;
+}
+
+.equipements-hero-content {
+    max-width: 800px;
+}
+
+.equipements-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.equipements-hero-content p {
+    font-size: 1.1rem;
+    color: #374151;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.equip-section {
+    padding: 80px 20px;
+}
+
+.equip-section-reverse {
+    background-color: var(--bg-color);
+    border-radius: 40px;
+}
+
+.equip-content-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.equip-image {
+    width: 50%;
+}
+
+.equip-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+.equip-text {
+    width: 50%;
+}
+
+.equip-text h2 {
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.equip-text p {
+    font-size: 1.05rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.equip-benefits {
+    list-style: none;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.equip-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.equip-icon-wrapper {
+    background: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 158, 96, 0.2);
+}
+
+.icon-small-filter {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.equip-trust-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.equip-trust-card {
+    width: 100%;
+    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.trust-icon-container {
+    background: var(--top-bg);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.equip-trust-card:hover .trust-icon-container {
+    transform: scale(1.1);
+    background: var(--primary-color);
+}
+
+.equip-trust-card:hover .trust-card-icon {
+    filter: brightness(0) invert(1);
+}
+
+.trust-card-icon {
+    width: 30px;
+    height: 30px;
+    transition: filter 0.3s ease;
+}
+
+.cta-finale {
+    background: var(--green-color);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.cta-finale-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-finale h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta-finale p {
+    font-size: 1.1rem;
+    color: #E5E7EB;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-actions .btn-dark {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.cta-actions .btn-dark:hover {
+    background: white;
+    color: var(--green-color);
+}
+
+@media (max-width: 1024px) {
+    .equip-trust-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .equipements-hero {
+        padding-top: 230px;
+    }
+    .equipements-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .equip-content-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .equip-image, .equip-text {
+        width: 100%;
+    }
+    .reverse-desktop {
+        flex-direction: column-reverse;
+    }
+    .equip-trust-cards {
+        grid-template-columns: 1fr;
+    }
+    .cta-actions {
+        flex-direction: column;
     }
 }
