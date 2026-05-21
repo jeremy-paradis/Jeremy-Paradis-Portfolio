@@ -1137,3 +1137,327 @@ body {
         flex-direction: column;
     }
 }
+
+/* =============================================
+   STATS SECTION (Homepage)
+   ============================================= */
+.stats-section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stats-section h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 50px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--green-color) 0%, #033225 100%);
+    border-radius: 20px;
+    padding: 40px 25px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(6, 78, 59, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(6, 78, 59, 0.25);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #D1D5DB;
+    line-height: 1.5;
+}
+
+/* =============================================
+   PROCESS SECTION (Info page)
+   ============================================= */
+.process-section {
+    padding: 80px 20px;
+}
+
+.process-section h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.process-step {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-top: 4px solid var(--primary-color);
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.process-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    opacity: 0.3;
+    margin-bottom: 15px;
+}
+
+.process-step h3 {
+    font-size: 1.1rem;
+    color: #111827;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* =============================================
+   REASSURANCE / TESTIMONIALS (Info page)
+   ============================================= */
+.reassurance-section {
+    background: linear-gradient(135deg, var(--green-color) 0%, #022a1e 100%);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.reassurance-section h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.reassurance-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reassurance-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.reassurance-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.reassurance-quote {
+    font-size: 1rem;
+    color: #E5E7EB;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.reassurance-quote::before {
+    content: '\201C';
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+    font-style: normal;
+    line-height: 1;
+}
+
+.reassurance-author {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* =============================================
+   SPECS SECTION (Equipements page)
+   ============================================= */
+.specs-section {
+    padding: 80px 20px;
+}
+
+.specs-section h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.spec-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.spec-card h3 {
+    font-size: 1.4rem;
+    color: var(--green-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #F3F4F6;
+    color: #4B5563;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spec-list li:last-child {
+    border-bottom: none;
+}
+
+.spec-list li::before {
+    content: '\2713';
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* =============================================
+   FAQ SECTION (Contact page)
+   ============================================= */
+.faq-section {
+    padding: 80px 20px;
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.faq-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+    font-size: 1.1rem;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.faq-answer {
+    font-size: 0.95rem;
+    color: #6B7280;
+    line-height: 1.7;
+}
+
+/* =============================================
+   RESPONSIVE — New Sections
+   ============================================= */
+@media (max-width: 1024px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .reassurance-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .cta-finale h2 {
+        font-size: 1.8rem;
+    }
+}
