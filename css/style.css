@@ -2,8 +2,6 @@
    FONT & VARIABLES
 ====================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap");
-
 :root {
   --bg-main: #171717;
   --bg-dark: #0f0f0f;
@@ -165,12 +163,52 @@ header {
 
 .project {
   padding: 60px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-content: center;
-  gap: 35px;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.projects-marquee {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.projects-marquee::before,
+.projects-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.projects-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: project-scroll 30s linear infinite;
+}
+
+.projects-group {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.projects-marquee:hover .projects-track {
+  animation-play-state: paused;
+}
+
+@keyframes project-scroll {
+  from {
+    transform: translateX(-40%);
+  }
+
+  to {
+    transform: translateX(-10%);
+  }
 }
 
 .card {
@@ -180,16 +218,15 @@ header {
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  width: 100%;
-  max-width: 450px;
-  margin: 0 auto;
+  transition: transform 0.35s ease, box-shadow 1s ease;
+  width: min(320px, 85vw);
+  flex: 0 0 auto;
 }
 
 .card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
-  border-color: var(--accent-a);
+  border: 1px solid var(--accent-a);
 }
 
 .card img {
@@ -625,6 +662,39 @@ header {
     gap: 20px;
   }
 
+  .projects-marquee {
+    overflow: hidden;
+  }
+
+  .projects-marquee::before,
+  .projects-marquee::after {
+    display: none;
+  }
+
+  .projects-track {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: none;
+  }
+
+  .projects-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .projects-group + .projects-group {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 24px;
+    flex: none;
+  }
+
   .card img {
     height: 160px;
   }
@@ -730,6 +800,63 @@ header {
   border-radius: 16px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   border: 1px solid var(--glass-border);
+}
+
+.media-gabon {
+  position: relative;
+  min-height: 260px;
+  padding: 30px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(8, 8, 8, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  isolation: isolate;
+}
+
+.media-gabon::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  background: url("../files/img/fond.png") center/cover no-repeat;
+  filter: blur(10px);
+  transform: scale(1.08);
+  z-index: -2;
+}
+
+.media-gabon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(7, 7, 7, 0.55), rgba(7, 7, 7, 0.2));
+  z-index: -1;
+}
+
+.button-projet {
+  z-index: 1;
+  border: none;
+  height: 50px;
+  padding: 0 30px;
+  margin: 100px auto;
+  border-radius: 999px;
+  background: var(--accent-a);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.button-projet:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.button-projet a {
+  color: #ffffff;
+  display: inline-block;
 }
 
 /* INSTAGRAM */

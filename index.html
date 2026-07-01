@@ -7,11 +7,15 @@
   <title>Portfolio Jérémy Paradis</title>
 
   <link rel="icon" type="image/png" href="./files/img/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- PARTICLES.JS (HTTPS + fiable) -->
-  <script src="./js/particles.min.js"></script>
+  <script defer src="./js/particles.min.js"></script>
 </head>
 
 <body>
@@ -41,31 +45,73 @@
   <!-- PROJETS -->
   <main>
     <section class="project" id="project">
+      <div class="projects-marquee">
+        <div class="projects-track">
+          <div class="projects-group">
+            <a href="./html/athome.html" class="card">
+              <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
+              <h3>Stage à Athome Studio</h3>
+              <h5>Montage vidéo et production musicale</h5>
+            </a>
 
-      <a href="./html/athome.html" class="card">
-        <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
-        <h3>Stage à Athome Studio</h3>
-        <h5>Montage vidéo et production musicale</h5>
-      </a>
+            <a href="./html/car.html" class="card">
+              <img src="./files/img/3.jpg" alt="Projet Octobersign">
+              <h3>Octobersign – Animation & Musique</h3>
+              <h5>Production musicale et animation 3D</h5>
+            </a>
 
-      <a href="./html/car.html" class="card">
-        <img src="./files/img/3.jpg" alt="Projet Octobersign">
-        <h3>Octobersign – Animation & Musique</h3>
-        <h5>Production musicale et animation 3D</h5>
-      </a>
+            <a href="./html/design.html" class="card">
+              <img src="./files/img/1.jpg" alt="Projet Motion Design">
+              <h3>Motion Design</h3>
+              <h5>Animations After Effects</h5>
+            </a>
 
-      <a href="./html/design.html" class="card">
-        <img src="./files/img/1.jpg" alt="Projet Motion Design">
-        <h3>Motion Design</h3>
-        <h5>Animations After Effects</h5>
-      </a>
+            <a href="./html/youtube.html" class="card">
+              <img src="./files/img/4.jpg" alt="Création d’intros 3D">
+              <h3>Création d’intros en 3D</h3>
+              <h5>Modélisation de texte pour YouTube</h5>
+            </a>
 
-      <a href="./html/youtube.html" class="card">
-        <img src="./files/img/4.jpg" alt="Création d’intros 3D">
-        <h3>Création d’intros en 3D</h3>
-        <h5>Modélisation de texte pour YouTube</h5>
-      </a>
+            <a href="./html/gabon.html" class="card">
+              <img src="./files/img/5.jpg" alt="Image d'un panneau solaire pour le projet Gabon Solar Technologie">
+              <h3>Site Internet pour Gabon Solar Technologie</h3>
+              <h5>Site Internet</h5>
+            </a>
+          </div>
 
+          <div class="projects-group" aria-hidden="true">
+            <a href="./html/athome.html" class="card">
+              <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
+              <h3>Stage à Athome Studio</h3>
+              <h5>Montage vidéo et production musicale</h5>
+            </a>
+
+            <a href="./html/car.html" class="card">
+              <img src="./files/img/3.jpg" alt="Projet Octobersign">
+              <h3>Octobersign – Animation & Musique</h3>
+              <h5>Production musicale et animation 3D</h5>
+            </a>
+
+            <a href="./html/design.html" class="card">
+              <img src="./files/img/1.jpg" alt="Projet Motion Design">
+              <h3>Motion Design</h3>
+              <h5>Animations After Effects</h5>
+            </a>
+
+            <a href="./html/youtube.html" class="card">
+              <img src="./files/img/4.jpg" alt="Création d’intros 3D">
+              <h3>Création d’intros en 3D</h3>
+              <h5>Modélisation de texte pour YouTube</h5>
+            </a>
+
+            <a href="./html/gabon.html" class="card">
+              <img src="./files/img/5.jpg" alt="Image d'un panneau solaire pour le projet Gabon Solar Technologie">
+              <h3>Site Internet pour Gabon Solar Technologie</h3>
+              <h5>Site Internet</h5>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- PROJETS EN COURS -->
@@ -75,25 +121,14 @@
 
         <div class="card upcoming-card">
           <div class="badge">Projet en cours</div>
-          <img src="./files/Gabon Solar Tech/assets/img/panneau solaire.png"
-            alt="Logo de l'entreprise Gabon Solar Technologie">
-          <h3>Site Internet pour Gabon Solar Technologie</h3>
-          <h5>Avril - Mai 2026</h5>
-          <div class="upcoming-info">
-            <a class="voir-projet" href="./files/Gabon Solar Tech/index.html" target="_blank">Voir le projet</a>
-          </div>
-        </div>
-
-        <div class="card upcoming-card">
-          <div class="badge">Projet en cours</div>
-          <img src="./files/img/logo (1).png" alt="Logo de l'entreprise Beyond">
+          <img src="./files/img/logo (1).png" alt="Logo de l'entreprise Beyond" loading="lazy" decoding="async">
           <h3>Création 3D pour Beyond</h3>
           <h5>Mai - Juin 2026</h5>
         </div>
 
         <div class="card upcoming-card">
           <div class="badge">Projet en cours</div>
-          <img src="./files/img/clip.png" alt="Extrait d'un Clip de RY4E">
+          <img src="./files/img/clip.png" alt="Extrait d'un Clip de RY4E" loading="lazy" decoding="async">
           <h3>Clip Musical pour RY4E</h3>
           <h5> Août - Septembre 2026</h5>
         </div>
