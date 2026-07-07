@@ -944,3 +944,16 @@ header {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 8px;
+  background: var(--accent-a);
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
