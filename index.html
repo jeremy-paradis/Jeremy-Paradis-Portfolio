@@ -13,8 +13,6 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- PARTICLES.JS (HTTPS + fiable) -->
   <script defer src="./js/particles.min.js"></script>
 </head>
 
@@ -31,65 +29,49 @@
       <a href="./files/cv/CV Paradis Jérémy.pdf">Mon CV</a>
     </nav>
   </header>
-
   <!-- BANNER -->
   <section class="banner">
-    <div id="particles-js"></div>
-
+    <h1>Mes <br> réalisations</h1>
     <div class="banner-content">
-      <h1>Jérémy Paradis</h1>
-      <h2>Étudiant en BUT 3 MMI, <br> à la recherche d’une alternance en développement web</h2>
+      <div class="profile-card">
+        <div class="profile-frame">
+          <img
+            src="./files/img/profile.jpg"
+            alt="Photo de profil de Jérémy Paradis" />
+        </div>
+
+        <p class="profile-description">Passionné par le design UI/UX et la 3D. <br> Je recherche un stage de fin d'études <br> 
+          (à partir de Avril 2027).</p>
+      </div>
     </div>
+    <div id="particles-js"></div>
   </section>
 
   <!-- PROJETS -->
   <main>
     <section class="project" id="project">
+      <div class="projects-controls">
+        <button class="projects-arrow" data-direction="prev" aria-label="Projet précédent">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button class="projects-arrow" data-direction="next" aria-label="Projet suivant">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+
       <div class="projects-marquee">
         <div class="projects-track">
           <div class="projects-group">
+            <a href="./html/gmc.html" class="card">
+              <img src="./files/img/3.jpg" alt="Site Web pour GMC">
+              <h3>Site Web pour GMC</h3>
+              <h5>Design et développement web</h5>
+            </a>
+
             <a href="./html/athome.html" class="card">
               <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
               <h3>Stage à Athome Studio</h3>
               <h5>Montage vidéo et production musicale</h5>
-            </a>
-
-            <a href="./html/car.html" class="card">
-              <img src="./files/img/3.jpg" alt="Projet Octobersign">
-              <h3>Octobersign – Animation & Musique</h3>
-              <h5>Production musicale et animation 3D</h5>
-            </a>
-
-            <a href="./html/design.html" class="card">
-              <img src="./files/img/1.jpg" alt="Projet Motion Design">
-              <h3>Motion Design</h3>
-              <h5>Animations After Effects</h5>
-            </a>
-
-            <a href="./html/youtube.html" class="card">
-              <img src="./files/img/4.jpg" alt="Création d’intros 3D">
-              <h3>Création d’intros en 3D</h3>
-              <h5>Modélisation de texte pour YouTube</h5>
-            </a>
-
-            <a href="./html/gabon.html" class="card">
-              <img src="./files/img/5.jpg" alt="Image d'un panneau solaire pour le projet Gabon Solar Technologie">
-              <h3>Site Internet pour Gabon Solar Technologie</h3>
-              <h5>Site Internet</h5>
-            </a>
-          </div>
-
-          <div class="projects-group" aria-hidden="true">
-            <a href="./html/athome.html" class="card">
-              <img src="./files/img/2.jpg" alt="Stage à Athome Studio">
-              <h3>Stage à Athome Studio</h3>
-              <h5>Montage vidéo et production musicale</h5>
-            </a>
-
-            <a href="./html/car.html" class="card">
-              <img src="./files/img/3.jpg" alt="Projet Octobersign">
-              <h3>Octobersign – Animation & Musique</h3>
-              <h5>Production musicale et animation 3D</h5>
             </a>
 
             <a href="./html/design.html" class="card">
@@ -128,13 +110,6 @@
 
         <div class="card upcoming-card">
           <div class="badge">Projet en cours</div>
-          <img src="./files/img/gmc.jpg" alt="Logo de l'entreprise GMC" loading="lazy" decoding="async">
-          <h3>Site Internet pour GMC</h3>
-          <a href="https://groupmakao.com/" class="button">Voir le projet</a>
-        </div>
-
-        <div class="card upcoming-card">
-          <div class="badge">Projet en cours</div>
           <img src="./files/img/clip.png" alt="Extrait d'un Clip de RY4E" loading="lazy" decoding="async">
           <h3>Clip Musical pour RY4E</h3>
           <h5> Septembre - Octobre 2026</h5>
@@ -143,6 +118,69 @@
       </div>
     </section>
   </main>
+
+  <script>
+    const marquee = document.querySelector('.projects-marquee');
+    const track = document.querySelector('.projects-track');
+    const arrows = document.querySelectorAll('.projects-arrow');
+
+    if (marquee && track && arrows.length) {
+      const firstCard = track.querySelector('.card');
+      const gap = 24;
+      const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 344;
+      let currentX = 0;
+      let lastTime = 0;
+      let autoRunning = true;
+
+      const maxTranslate = () => Math.max(0, track.scrollWidth - marquee.clientWidth);
+
+      const clampX = (value) => {
+        const max = maxTranslate();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(value, 0), max);
+      };
+
+      const render = () => {
+        track.style.transform = `translate3d(${-currentX}px, 0, 0)`;
+      };
+
+      const tick = (time) => {
+        if (!lastTime) lastTime = time;
+        const delta = time - lastTime;
+        lastTime = time;
+
+        if (autoRunning && maxTranslate() > 0) {
+          currentX += delta * 0.025;
+          if (currentX >= maxTranslate()) currentX = 0;
+        }
+
+        render();
+        requestAnimationFrame(tick);
+      };
+
+      arrows.forEach((button) => {
+        button.addEventListener('click', () => {
+          const direction = button.dataset.direction === 'next' ? 1 : -1;
+          autoRunning = false;
+          currentX = clampX(currentX + direction * step * 1.2);
+          render();
+
+          clearTimeout(button.resumeTimer);
+          button.resumeTimer = setTimeout(() => {
+            autoRunning = true;
+            lastTime = 0;
+          }, 700);
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        currentX = clampX(currentX);
+        render();
+      });
+
+      requestAnimationFrame(tick);
+    }
+  </script>
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact-section">
@@ -251,7 +289,6 @@
     </div>
   </footer>
 
-  <!-- PARTICLES INIT -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       if (window.particlesJS) {
@@ -281,7 +318,6 @@
       }
     });
   </script>
-
 
 </body>
 
